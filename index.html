@@ -1,0 +1,571 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+.d{
+  background:#F2F2EE;
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  color:#323129;
+  width:100%;
+}
+
+.hdr{
+  background:#323129;
+  padding:clamp(20px,3vw,36px) clamp(20px,4vw,52px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.logo-mark{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.logo-name{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(18px,2.8vw,32px);
+  letter-spacing:0.22em;
+  color:#D2D6C1;
+  text-transform:uppercase;
+  line-height:1;
+}
+.logo-name span{
+  font-size:clamp(22px,3.4vw,40px);
+  vertical-align:-2px;
+}
+.logo-sub{
+  font-family:'Jost',sans-serif;
+  font-size:clamp(8px,0.75vw,10px);
+  letter-spacing:0.42em;
+  color:#7a7d65;
+  text-transform:uppercase;
+  font-weight:400;
+}
+
+.hdr-right{text-align:right;}
+.hdr-eyebrow{
+  font-size:clamp(8px,0.7vw,9px);
+  letter-spacing:0.28em;
+  text-transform:uppercase;
+  color:#7a7d65;
+  margin-bottom:5px;
+  font-weight:400;
+}
+.hdr-period{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(13px,1.4vw,17px);
+  font-weight:300;
+  color:#D2D6C1;
+  letter-spacing:0.06em;
+}
+.hdr-rule{
+  width:100%;
+  height:1px;
+  background:#4a4840;
+  margin:clamp(14px,2vw,22px) 0 0;
+}
+
+.body{
+  padding:clamp(16px,3vw,40px) clamp(16px,4vw,52px);
+}
+
+.eyebrow{
+  font-size:clamp(7px,0.65vw,9px);
+  letter-spacing:0.32em;
+  text-transform:uppercase;
+  color:#9a9888;
+  font-weight:400;
+  margin-bottom:clamp(10px,1.4vw,16px);
+}
+
+.activity-strip{
+  background:#323129;
+  border-radius:2px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  margin-bottom:clamp(16px,2.5vw,28px);
+  overflow:hidden;
+}
+.act-item{
+  padding:clamp(14px,2vw,24px) clamp(12px,2vw,24px);
+  text-align:center;
+  border-right:0.5px solid #4a4840;
+}
+.act-item:last-child{border-right:none;}
+.act-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(24px,3.5vw,44px);
+  font-weight:300;
+  color:#D2D6C1;
+  line-height:1;
+  letter-spacing:-0.01em;
+}
+.act-lbl{
+  font-size:clamp(7px,0.65vw,9px);
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:#7a7d65;
+  margin-top:5px;
+  font-weight:400;
+}
+.act-star{
+  display:inline-block;
+  width:5px;height:5px;
+  background:#9da58a;
+  border-radius:50%;
+  margin-bottom:6px;
+}
+
+.kpi-row{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(8px,1vw,12px);
+  margin-bottom:clamp(14px,2vw,24px);
+}
+.kpi{
+  background:#fff;
+  border:0.5px solid #d8d5c8;
+  border-top:2px solid #323129;
+  padding:clamp(12px,1.5vw,18px) clamp(12px,1.5vw,18px);
+}
+.kpi.accent-olive{border-top-color:#7a7d65;}
+.kpi.accent-sage{border-top-color:#9da58a;}
+.kpi.accent-light{border-top-color:#C0C4AE;}
+.kpi-lbl{
+  font-size:clamp(7px,0.6vw,8.5px);
+  letter-spacing:0.26em;
+  text-transform:uppercase;
+  color:#9a9888;
+  margin-bottom:clamp(8px,1vw,12px);
+  font-weight:400;
+}
+.kpi-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(28px,3.5vw,46px);
+  font-weight:300;
+  color:#323129;
+  line-height:1;
+}
+.kpi-sub{
+  font-size:clamp(9px,0.7vw,10.5px);
+  color:#9a9888;
+  margin-top:5px;
+  letter-spacing:0.04em;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:clamp(8px,1vw,14px);
+  margin-bottom:clamp(10px,1.5vw,16px);
+}
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(8px,1vw,14px);
+  margin-bottom:clamp(10px,1.5vw,16px);
+}
+.grid2-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:clamp(8px,1vw,14px);
+  margin-bottom:clamp(10px,1.5vw,16px);
+}
+
+.card{
+  background:#fff;
+  border:0.5px solid #d8d5c8;
+  padding:clamp(14px,1.8vw,22px) clamp(14px,1.8vw,22px);
+}
+.card-ttl{
+  font-size:clamp(7px,0.62vw,8.5px);
+  letter-spacing:0.3em;
+  text-transform:uppercase;
+  color:#9a9888;
+  margin-bottom:clamp(12px,1.4vw,18px);
+  font-weight:400;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.card-ttl::after{
+  content:'';
+  flex:1;
+  height:0.5px;
+  background:#e8e6de;
+}
+
+.ch-wrap{position:relative;}
+.ch240{height:clamp(160px,18vw,240px);}
+.ch180{height:clamp(130px,14vw,190px);}
+.ch200{height:clamp(140px,15vw,200px);}
+
+.legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:clamp(8px,1vw,14px);
+  margin-top:10px;
+}
+.legend-i{
+  display:flex;
+  align-items:center;
+  gap:5px;
+  font-size:clamp(9px,0.75vw,11px);
+  color:#6a6858;
+}
+.legend-sq{
+  width:8px;height:8px;
+  border-radius:1px;
+  flex-shrink:0;
+}
+
+.bar-list{margin-top:2px;}
+.bar-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:clamp(5px,0.6vw,8px) 0;
+  border-bottom:0.5px solid #f0ede4;
+}
+.bar-row:last-child{border-bottom:none;}
+.bar-nm{
+  font-size:clamp(9px,0.75vw,11px);
+  color:#5a5947;
+  width:clamp(90px,9vw,120px);
+  flex-shrink:0;
+}
+.bar-bg{flex:1;height:4px;background:#f0ede4;border-radius:2px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:2px;}
+.bar-v{
+  font-size:clamp(10px,0.8vw,12px);
+  font-weight:500;
+  color:#323129;
+  width:30px;
+  text-align:right;
+  flex-shrink:0;
+}
+
+.profiles{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:clamp(6px,0.8vw,10px);
+  margin-top:2px;
+}
+.prof-box{
+  background:#F2F2EE;
+  border:0.5px solid #d8d5c8;
+  padding:clamp(10px,1.2vw,16px);
+  text-align:center;
+}
+.prof-n{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(22px,2.8vw,34px);
+  font-weight:300;
+  color:#323129;
+  line-height:1;
+}
+.prof-l{
+  font-size:clamp(7px,0.62vw,8.5px);
+  letter-spacing:0.16em;
+  color:#9a9888;
+  text-transform:uppercase;
+  margin-top:3px;
+}
+
+.div-h{
+  width:0.5px;
+  background:#e8e6de;
+  align-self:stretch;
+}
+
+.ftr{
+  background:#D2D6C1;
+  padding:clamp(12px,1.5vw,16px) clamp(20px,4vw,52px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.ftr-txt{
+  font-size:clamp(7px,0.6vw,8.5px);
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:#5a5947;
+  font-weight:400;
+}
+.ftr-dot{
+  width:3px;height:3px;
+  background:#9da58a;
+  border-radius:50%;
+  flex-shrink:0;
+}
+
+@media(max-width:640px){
+  .kpi-row{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .grid2{grid-template-columns:1fr;}
+  .grid3{grid-template-columns:1fr;}
+  .grid2-bottom{grid-template-columns:1fr;}
+  .activity-strip{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .act-item:nth-child(2){border-right:none;}
+  .act-item:nth-child(3){border-top:0.5px solid #4a4840;}
+  .act-item:nth-child(4){border-top:0.5px solid #4a4840;}
+  .profiles{grid-template-columns:repeat(4,1fr);}
+}
+</style>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Dashboard de gestión de leads The Woods Boquete Residences, enero a 15 de abril 2026.</h2>
+
+<div class="d">
+
+  <div class="hdr">
+    <div class="logo-mark">
+      <div class="logo-name">The W<span>OO</span>DS</div>
+      <div class="logo-sub">Boquete Residences</div>
+    </div>
+    <div class="hdr-right">
+      <div class="hdr-eyebrow">Gestión de leads &nbsp;·&nbsp; Informe stakeholders</div>
+      <div class="hdr-period">Enero — 15 de Abril, 2026</div>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="eyebrow">Actividad total del periodo</div>
+
+    <div class="activity-strip">
+      <div class="act-item">
+        <div class="act-star"></div>
+        <div class="act-num">827</div>
+        <div class="act-lbl">Total leads</div>
+      </div>
+      <div class="act-item">
+        <div class="act-star" style="background:#D2D6C1;"></div>
+        <div class="act-num">1,278</div>
+        <div class="act-lbl">Mensajes WhatsApp</div>
+      </div>
+      <div class="act-item">
+        <div class="act-star"></div>
+        <div class="act-num">1,030</div>
+        <div class="act-lbl">Llamadas realizadas</div>
+      </div>
+      <div class="act-item">
+        <div class="act-star"></div>
+        <div class="act-num">331</div>
+        <div class="act-lbl">Correos enviados</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:clamp(6px,1vw,10px);">Indicadores clave</div>
+
+    <div class="kpi-row">
+      <div class="kpi">
+        <div class="kpi-lbl">Alta intención de compra</div>
+        <div class="kpi-num">8</div>
+        <div class="kpi-sub">Leads calientes</div>
+      </div>
+      <div class="kpi accent-olive">
+        <div class="kpi-lbl">En evaluación activa</div>
+        <div class="kpi-num">97</div>
+        <div class="kpi-sub">Leads medios</div>
+      </div>
+      <div class="kpi accent-sage">
+        <div class="kpi-lbl">Avance en pipeline</div>
+        <div class="kpi-num">4</div>
+        <div class="kpi-sub">Reservas tentativas</div>
+      </div>
+      <div class="kpi accent-light">
+        <div class="kpi-lbl">Interés diferido</div>
+        <div class="kpi-num">6</div>
+        <div class="kpi-sub">Contactar en el futuro</div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <div class="card-ttl">Leads mensuales</div>
+        <div class="ch-wrap ch240">
+          <canvas id="cLeads" role="img" aria-label="Leads mensuales: Enero 308, Febrero 342, Marzo 149, Abril 28">Enero 308, Febrero 342, Marzo 149, Abril 28.</canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-ttl">Origen de leads</div>
+        <div class="ch-wrap ch180" style="margin-top:4px;">
+          <canvas id="cOrigen" role="img" aria-label="Origen: Facebook Ads 783 (94.7%), sin origen 33 (4%), otros 11 (1.3%)">Facebook Ads 94.7%, otros 5.3%.</canvas>
+        </div>
+        <div class="legend">
+          <div class="legend-i"><div class="legend-sq" style="background:#323129;"></div>Facebook Ads — 94.7%</div>
+          <div class="legend-i"><div class="legend-sq" style="background:#9da58a;"></div>Sin origen — 4.0%</div>
+          <div class="legend-i"><div class="legend-sq" style="background:#C0C4AE;"></div>Otros — 1.3%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid3">
+      <div class="card">
+        <div class="card-ttl">Intención de compra</div>
+        <div class="ch-wrap ch200">
+          <canvas id="cInteres" role="img" aria-label="Alta 8, Media 97, Baja 402, N/A 286, sin clasificar 34">Alta 8, Media 97, Baja 402, N/A 286, sin clasificar 34.</canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-ttl">Estado del pipeline</div>
+        <div class="bar-list">
+          <div class="bar-row">
+            <div class="bar-nm">Lead frío</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:100%;background:#5a5947;"></div></div>
+            <div class="bar-v">384</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-nm">Junk / Basura</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:80%;background:#9da58a;"></div></div>
+            <div class="bar-v">309</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-nm">Lead medio</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:23%;background:#7a7d65;"></div></div>
+            <div class="bar-v">88</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-nm">Perdido</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:6%;background:#b8bcab;"></div></div>
+            <div class="bar-v">23</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-nm">No aplica</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:3.4%;background:#C0C4AE;"></div></div>
+            <div class="bar-v">13</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-nm">Contactar futuro</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:1.6%;background:#D2D6C1;"></div></div>
+            <div class="bar-v">6</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-nm">Reserva tentativa</div>
+            <div class="bar-bg"><div class="bar-fill" style="width:1%;background:#323129;"></div></div>
+            <div class="bar-v">4</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-ttl">Perfiles clasificados</div>
+        <div class="profiles">
+          <div class="prof-box">
+            <div class="prof-n">65</div>
+            <div class="prof-l">Inversionista</div>
+          </div>
+          <div class="prof-box">
+            <div class="prof-n">21</div>
+            <div class="prof-l">Familia / 2ª viv.</div>
+          </div>
+          <div class="prof-box">
+            <div class="prof-n">14</div>
+            <div class="prof-l">Retiro</div>
+          </div>
+          <div class="prof-box">
+            <div class="prof-n">12</div>
+            <div class="prof-l">Broker</div>
+          </div>
+        </div>
+        <div style="margin-top:clamp(12px,1.4vw,18px);">
+          <div class="card-ttl">Razones de no continuidad</div>
+          <div class="bar-list">
+            <div class="bar-row">
+              <div class="bar-nm">No quiere continuar</div>
+              <div class="bar-bg"><div class="bar-fill" style="width:100%;background:#5a5947;"></div></div>
+              <div class="bar-v">143</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-nm">Fue equivocado</div>
+              <div class="bar-bg"><div class="bar-fill" style="width:82%;background:#7a7d65;"></div></div>
+              <div class="bar-v">118</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-nm">Poco ingreso</div>
+              <div class="bar-bg"><div class="bar-fill" style="width:13%;background:#9da58a;"></div></div>
+              <div class="bar-v">19</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-nm">No le gusta el proyecto</div>
+              <div class="bar-bg"><div class="bar-fill" style="width:12%;background:#b8bcab;"></div></div>
+              <div class="bar-v">17</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-nm">Precio</div>
+              <div class="bar-bg"><div class="bar-fill" style="width:9%;background:#C0C4AE;"></div></div>
+              <div class="bar-v">13</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:0;">
+      <div class="card-ttl">Llamadas realizadas por mes</div>
+      <div class="ch-wrap ch200">
+        <canvas id="cLlamadas" role="img" aria-label="Llamadas: Enero 336, Febrero 943, Marzo 541, Abril 209, Mayo 1">Enero 336, Febrero 943, Marzo 541, Abril 209, Mayo 1.</canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ftr">
+    <div class="ftr-txt">The Woods Boquete Residences</div>
+    <div class="ftr-dot"></div>
+    <div class="ftr-txt">Informe confidencial — stakeholders</div>
+    <div class="ftr-dot"></div>
+    <div class="ftr-txt">Ene — 15 Abr 2026</div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const C1='#323129', C2='#5a5947', C3='#7a7d65', C4='#9da58a', C5='#C0C4AE', C6='#D2D6C1';
+const grid='#f0ede4', tick='#9a9888';
+const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{color:tick,font:{size:11,family:"'Jost',sans-serif"},maxRotation:0},border:{display:false}},y:{grid:{color:grid},ticks:{color:tick,font:{size:10,family:"'Jost',sans-serif"}},border:{display:false}}}};
+
+new Chart(document.getElementById('cLeads'),{
+  type:'bar',
+  data:{
+    labels:['Enero','Febrero','Marzo','Abril'],
+    datasets:[{label:'Leads',data:[308,342,149,28],backgroundColor:[C2,C1,C3,C5],borderRadius:1,borderSkipped:false}]
+  },
+  options:{...baseOpts,scales:{...baseOpts.scales,x:{...baseOpts.scales.x,ticks:{...baseOpts.scales.x.ticks,autoSkip:false}},y:{...baseOpts.scales.y,ticks:{...baseOpts.scales.y.ticks,callback:v=>v}}}}
+});
+
+new Chart(document.getElementById('cOrigen'),{
+  type:'doughnut',
+  data:{
+    labels:['Facebook Ads','Sin origen','Otros'],
+    datasets:[{data:[783,33,11],backgroundColor:[C1,C4,C5],borderWidth:0,hoverOffset:4}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,cutout:'72%',plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>' '+ctx.label+': '+ctx.parsed}}}}
+});
+
+new Chart(document.getElementById('cInteres'),{
+  type:'bar',
+  data:{
+    labels:['Alta','Media','Baja','N/A','Sin clas.'],
+    datasets:[{data:[8,97,402,286,34],backgroundColor:[C1,C2,C5,C4,C6],borderRadius:1,borderSkipped:false}]
+  },
+  options:{...baseOpts,scales:{...baseOpts.scales,x:{...baseOpts.scales.x,ticks:{...baseOpts.scales.x.ticks,font:{size:10,family:"'Jost',sans-serif"},autoSkip:false}},y:{...baseOpts.scales.y}}}
+});
+
+new Chart(document.getElementById('cLlamadas'),{
+  type:'bar',
+  data:{
+    labels:['Enero','Febrero','Marzo','Abril','Mayo'],
+    datasets:[{label:'Llamadas',data:[336,943,541,209,1],backgroundColor:[C5,C1,C2,C3,C6],borderRadius:1,borderSkipped:false}]
+  },
+  options:{...baseOpts,scales:{...baseOpts.scales,x:{...baseOpts.scales.x,ticks:{...baseOpts.scales.x.ticks,autoSkip:false}},y:{...baseOpts.scales.y}}}
+});
+</script>
